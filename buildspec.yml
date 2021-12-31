@@ -8,6 +8,7 @@ phases:
       - echo $CODEBUILD_RESOLVED_SOURCE_VERSION
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | head -c 7) 
       - echo $COMMIT_HASH
+      - echo $IMAGE_REPO_NAME
       - curl -sS -o aws-iam-authenticator https://amazon-eks.s3-us-west-2.amazonaws.com/1.10.3/2018-07-26/bin/linux/amd64/aws-iam-authenticator
       - curl -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.15.10/2020-02-22/bin/linux/amd64/kubectl   
       - chmod +x ./kubectl
@@ -25,7 +26,7 @@ phases:
       - echo Entered the build phase...
       - echo Building the Docker image...
       - echo Logging in to Docker Hub...
-      - docker build -t 423116355542.dkr.ecr.us-east-2.amazonaws.com/k8s-learning-repo:fleetman-position-tracker-v1 -t 423116355542.dkr.ecr.us-east-2.amazonaws.com/k8s-learning-repo:$COMMIT_HASH .
+      - docker build -t 423116355542.dkr.ecr.us-east-2.amazonaws.com/k8s-learning-repo:latest -t 423116355542.dkr.ecr.us-east-2.amazonaws.com/k8s-learning-repo:$COMMIT_HASH .
   post_build: 
     commands:
       - echo Entered the post_build phase...
