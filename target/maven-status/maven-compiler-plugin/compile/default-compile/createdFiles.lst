@@ -1,0 +1,11 @@
+com\virtualpairprogrammers\tracker\data\PositionRepository.class
+com\virtualpairprogrammers\tracker\data\Data.class
+com\virtualpairprogrammers\tracker\rest\PositionReportsController.class
+com\virtualpairprogrammers\tracker\domain\VehiclePosition.class
+com\virtualpairprogrammers\tracker\data\DataBasicInMemoryImpl.class
+com\virtualpairprogrammers\tracker\messaging\LocalDevelopmentMessageSender.class
+com\virtualpairprogrammers\tracker\domain\VehicleBuilder.class
+com\virtualpairprogrammers\tracker\data\DataMongoDbImpl.class
+com\virtualpairprogrammers\tracker\domain\VehicleNotFoundException.class
+com\virtualpairprogrammers\tracker\messaging\MessageProcessor.class
+com\virtualpairprogrammers\tracker\PositionTrackerApplication.class

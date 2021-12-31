@@ -1,0 +1,5 @@
+com\virtualpairprogrammers\TestUtils.class
+com\virtualpairprogrammers\TestInMemoryOpsOnMultipleVehicles.class
+com\virtualpairprogrammers\TestSpeedCalculations.class
+com\virtualpairprogrammers\TestBasicOperationsOnInMemoryDatabase.class
+com\virtualpairprogrammers\VehiclePositionTests.class
