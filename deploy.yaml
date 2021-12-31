@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: position-tracker
-        image: ${REPOSITORY_TAG}
+        image: 423116355542.dkr.ecr.us-east-2.amazonaws.com/k8s-learning-repo:7d4ba82
         env:
         - name: SPRING_PROFILES_ACTIVE
           value: production-microservice
