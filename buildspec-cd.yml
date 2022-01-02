@@ -28,7 +28,7 @@ phases:
       - echo Logging in to Amazon kops... 
       - export KOPS_STATE_STORE=s3://aws-learning3-bucket
       - export AWS_REGION=us-east-2
-      - kops export kubeconfig mylearningcluster.k8s.local --user k8s-user
+      - kops export kubeconfig mylearningcluster.k8s.local --admin
       - sed -i 's@CONTAINER_IMAGE@'"$DOCKER_IMAGE"'@' deployment.yaml
       - cat deployment.yaml
       - kubectl apply -f deployment.yaml
