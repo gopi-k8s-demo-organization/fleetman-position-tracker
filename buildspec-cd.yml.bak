@@ -21,4 +21,3 @@ phases:
       - DOCKER_IMAGE=423116355542.dkr.ecr.us-east-2.amazonaws.com/k8s-learning-repo:$COMMIT_HASH
       - echo ${DOCKER_IMAGE}
       - echo Logging in to Amazon kops... 
-      

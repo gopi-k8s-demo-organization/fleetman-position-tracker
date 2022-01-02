@@ -21,3 +21,7 @@ phases:
       - DOCKER_IMAGE=423116355542.dkr.ecr.us-east-2.amazonaws.com/k8s-learning-repo:$COMMIT_HASH
       - echo ${DOCKER_IMAGE}
       - echo Logging in to Amazon kops... 
+      - kops export kubecfg mylearningcluster.k8s.local --admin=87600h
+      - sed -i 's@CONTAINER_IMAGE@'"$DOCKER_IMAGE"'@' deployment.yaml
+      - cat deployment.yaml
+      - kubectl apply -f deployment.yaml
