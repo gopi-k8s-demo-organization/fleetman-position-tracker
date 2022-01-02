@@ -31,6 +31,6 @@ phases:
       - export AWS_SECRET_ACCESS_KEY=mdhvM3YDxUi8c5lvQ2U1uuAOkpTI5vpPWNT7+K6M
       - export AWS_DEFAULT_REGION=us-east-2
       - kops export kubeconfig mylearningcluster.k8s.local --admin
-      - sed -i 's@CONTAINER_IMAGE@'"$DOCKER_IMAGE"'@' deployment.yaml
-      - cat deployment.yaml
+      - sed -i 's@CONTAINER_IMAGE@'"$DOCKER_IMAGE"'@' deploy.yaml
+      - cat deploy.yaml
       - kubectl apply -f deployment.yaml
