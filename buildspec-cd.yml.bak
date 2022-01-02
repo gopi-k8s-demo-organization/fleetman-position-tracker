@@ -15,14 +15,10 @@ phases:
       - mkdir -p $HOME/bin && cp ./kubectl $HOME/bin/kubectl && export PATH=$PATH:$HOME/bin
       - echo 'export PATH=$PATH:$HOME/bin' >> ~/.bashrc
       - source ~/.bashrc
-   post_build: 
+  post_build: 
     commands:
       - echo Entered the post_build phase.... 
       - DOCKER_IMAGE=423116355542.dkr.ecr.us-east-2.amazonaws.com/k8s-learning-repo:$COMMIT_HASH
       - echo ${DOCKER_IMAGE}
       - echo Logging in to Amazon kops... 
-      - kops export kubecfg mylearningcluster.k8s.local --admin=87600h
-      - kubectl get pods -n ingress-nginx
-      - sed -i 's@CONTAINER_IMAGE@'"$DOCKER_IMAGE"'@' deployment.yaml
-      - cat deployment.yaml
-      - kubectl apply -f deployment.yaml
+      
