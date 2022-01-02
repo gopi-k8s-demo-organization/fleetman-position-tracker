@@ -33,4 +33,4 @@ phases:
       - kops export kubeconfig mylearningcluster.k8s.local --admin
       - sed -i 's@CONTAINER_IMAGE@'"$DOCKER_IMAGE"'@' deploy.yaml
       - cat deploy.yaml
-      - kubectl apply -f deployment.yaml
+      - kubectl apply -f deploy.yaml
