@@ -27,7 +27,9 @@ phases:
       - echo ${DOCKER_IMAGE}
       - echo Logging in to Amazon kops... 
       - export KOPS_STATE_STORE=s3://aws-learning3-bucket
-      - export AWS_REGION=us-east-2
+      - export AWS_ACCESS_KEY_ID=AKIAUUV6ACSC7ZPOZEFZ
+      - export AWS_SECRET_ACCESS_KEY=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
+      - export AWS_DEFAULT_REGION=us-east-2
       - kops export kubeconfig mylearningcluster.k8s.local --admin
       - sed -i 's@CONTAINER_IMAGE@'"$DOCKER_IMAGE"'@' deployment.yaml
       - cat deployment.yaml
