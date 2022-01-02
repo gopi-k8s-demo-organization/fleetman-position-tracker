@@ -33,7 +33,7 @@ phases:
       - ENVIRONMENT=dev
       - echo ${ENVIRONMENT}
       - |
-      if [ $ENVIRONMENT = "dev" ] || [ $ENVIRONMENT = "prod" ]; then
+      if [ $ENVIRONMENT = "dev" ]; then
           echo inside dev or prod;
       elif [ $ENVIRONMENT = "qa" ]; then 
           echo inside qa;
