@@ -23,7 +23,7 @@ phases:
   post_build: 
     commands:
       - echo Entered the post_build phase.... 
-      - DOCKER_IMAGE=423116355542.dkr.ecr.us-east-2.amazonaws.com/k8s-learning-repo:$COMMIT_HASH
+      - DOCKER_IMAGE=423116355542.dkr.ecr.us-east-2.amazonaws.com/terraform-ecr-repo:$COMMIT_HASH
       - echo ${DOCKER_IMAGE}
       - echo Logging in to Amazon kops... 
       - export KOPS_STATE_STORE=s3://aws-learning3-bucket
@@ -33,4 +33,5 @@ phases:
       - kops export kubeconfig mylearningcluster.k8s.local --admin
       - sed -i 's@CONTAINER_IMAGE@'"$DOCKER_IMAGE"'@' deploy.yaml
       - cat deploy.yaml
-      - kubectl apply -f deploy.yaml 
+      - kubectl apply -f deploy.yaml
+      - echo Deployment completed ...
