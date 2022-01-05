@@ -26,7 +26,9 @@ phases:
       - DOCKER_IMAGE=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$COMMIT_HASH
       - echo ${DOCKER_IMAGE}
       - echo Logging in to Amazon eks... 
-      - aws eks --region $AWS_DEFAULT_REGION update-kubeconfig --name $AWS_CLUSTER_NAME
+      - export AWS_DEFAULT_REGION=$AWS_DEFAULT_REGION
+      - echo $AWS_DEFAULT_REGION
+      - aws eks update-kubeconfig --name $AWS_CLUSTER_NAME
       - sed -i 's@CONTAINER_IMAGE@'"$DOCKER_IMAGE"'@' deploy.yaml
       - cat deploy.yaml
       - kubectl apply -f deploy.yaml
