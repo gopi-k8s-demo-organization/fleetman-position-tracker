@@ -25,11 +25,11 @@ phases:
       - echo Entered the post_build phase.... 
       - DOCKER_IMAGE=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$COMMIT_HASH
       - echo ${DOCKER_IMAGE}
-      - $(aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION)
-      - echo Logging in to Amazon eks... 
       - export AWS_DEFAULT_REGION=$AWS_DEFAULT_REGION
       - export AWS_ACCESS_KEY_ID=AKIAUUV6ACSC5TF4UUGJ
       - export AWS_SECRET_ACCESS_KEY=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
+      - $(aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION)
+      - echo Logging in to Amazon eks... 
       - echo $AWS_DEFAULT_REGION
       - aws eks update-kubeconfig --name $AWS_CLUSTER_NAME
       - sed -i 's@CONTAINER_IMAGE@'"$DOCKER_IMAGE"'@' deploy.yaml
