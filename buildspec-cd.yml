@@ -25,7 +25,7 @@ phases:
       - echo Entered the post_build phase.... 
       - DOCKER_IMAGE=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$COMMIT_HASH
       - echo ${DOCKER_IMAGE}
-      - export ENVIRONMENT=dev
+      - export ENVIRONMENT=qa
       - echo ${ENVIRONMENT}
       - export AWS_DEFAULT_REGION=$AWS_DEFAULT_REGION
       - |
