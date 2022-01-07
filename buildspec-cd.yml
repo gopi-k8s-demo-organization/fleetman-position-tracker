@@ -28,7 +28,7 @@ phases:
       - export ENVIRONMENT=dev
       - echo ${ENVIRONMENT}
       - |
-        if[ "$ENVIRONMENT" = "dev" ]; then 
+        if [ "$ENVIRONMENT" = "dev" ]; then 
             echo "inside dev"...
         fi
       - export AWS_DEFAULT_REGION=$AWS_DEFAULT_REGION
